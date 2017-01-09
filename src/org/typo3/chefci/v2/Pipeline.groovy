@@ -45,7 +45,7 @@ class Pipeline implements Serializable {
         }
 
         def withIntegrationStage() {
-            stages << new Intergration(script, 'Integration')
+            stages << new Integration(script, 'Integration')
         }
 
         def build() {
@@ -55,6 +55,7 @@ class Pipeline implements Serializable {
         def buildDefaultPipeline() {
             withGitCheckoutStage()
             withLintStage()
+            withIntegrationStage()
             return new Pipeline(this)
         }
 
