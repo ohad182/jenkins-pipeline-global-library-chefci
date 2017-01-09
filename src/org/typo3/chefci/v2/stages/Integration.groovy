@@ -15,14 +15,14 @@ class Integration extends AbstractStage {
 
     private def testkitchen(){
         script.node {
-            script {
+            script.script {
                 wrap([$class: 'AnsiColorBuildWrapper', colorMapName: "XTerm"]) {
-                    result = sh(script: 'kitchen test --destroy always', returnStatus: true)
+                    result = script.sh(script: 'kitchen test --destroy always', returnStatus: true)
                     if (result != 0) {
-                        echo "kitchen returned non-zero exit status"
+                        script.echo "kitchen returned non-zero exit status"
 //                        echo "Archiving test-kitchen logs"
 //                        archive(includes: ".kitchen/logs/${instanceName}.log")
-                        error("kitchen returned non-zero exit status")
+                        script.error("kitchen returned non-zero exit status")
                     }
                 }
             }
