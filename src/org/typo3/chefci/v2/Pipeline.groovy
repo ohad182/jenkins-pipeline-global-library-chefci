@@ -3,6 +3,7 @@ package org.typo3.chefci.v2
 import org.typo3.chefci.v2.stages.GitCheckout
 import org.typo3.chefci.v2.stages.HelloWorld
 import org.typo3.chefci.v2.stages.Lint
+import org.typo3.chefci.v2.stages.Integration
 import org.typo3.chefci.v2.stages.Stage
 
 class Pipeline implements Serializable {
@@ -41,6 +42,10 @@ class Pipeline implements Serializable {
 
         def withLintStage() {
             stages << new Lint(script, 'Linting')
+        }
+
+        def withIntegrationStage() {
+            stages << new Intergration(script, 'Integration')
         }
 
         def build() {
