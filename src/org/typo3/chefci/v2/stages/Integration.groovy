@@ -15,7 +15,7 @@ class Integration extends AbstractStage {
 
     private def testkitchen(){
         script.node {
-            wrap([$class: 'AnsiColorBuildWrapper', colorMapName: "XTerm"]) {
+            script.wrap([$class: 'AnsiColorBuildWrapper', colorMapName: "XTerm"]) {
                 result = script.sh(script: 'kitchen test --destroy always', returnStatus: true)
                 if (result != 0) {
                     script.echo "kitchen returned non-zero exit status"
