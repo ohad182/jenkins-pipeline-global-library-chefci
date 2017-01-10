@@ -1,6 +1,6 @@
 package org.typo3.chefci.v2.stages
 
-import org.typo3.chefci.helpers.*
+import org.typo3.chefci.helpers.JenkinsGlobalLib
 
 class Integration extends AbstractStage {
 
@@ -18,8 +18,8 @@ class Integration extends AbstractStage {
     private def testkitchen(){
         script.node {
 
-            helper = new JenkinsGlobalLib()
-            String kitchenYaml = helper.globalLibraryScript(srcPath: 'cookbook/.kitchen.docker.yml', destPath: '.kitchen.docker.yml')
+            jenkinsHelper = new JenkinsGlobalLib()
+            String kitchenYaml = jenkinsHelper.globalLibraryScript(srcPath: 'cookbook/.kitchen.docker.yml', destPath: '.kitchen.docker.yml')
 
             script.wrap([$class: 'AnsiColorBuildWrapper', colorMapName: "XTerm"]) {
                 int result = script.sh(script: 'kitchen test --destroy always', returnStatus: true)
