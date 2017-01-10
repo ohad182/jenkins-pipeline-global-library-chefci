@@ -38,14 +38,17 @@ class Pipeline implements Serializable {
 
         def withGitCheckoutStage() {
             stages << new GitCheckout(script, 'Git Checkout')
+            return this
         }
 
         def withLintStage() {
             stages << new Lint(script, 'Linting')
+            return this
         }
 
         def withIntegrationStage() {
             stages << new Integration(script, 'Integration')
+            return this
         }
 
         def build() {
