@@ -1,5 +1,6 @@
 #!/usr/bin/groovy
 
+@NonCPS
 def call(String path) {
     if (fileExists(path)) {
         // echo "File ${path} already exists. Deleting"
