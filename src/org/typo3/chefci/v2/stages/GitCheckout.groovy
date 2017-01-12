@@ -10,9 +10,10 @@ class GitCheckout extends AbstractStage {
     void execute() {
         script.stage(stageName) {
             script.node {
-                script.checkout(script.scm)
+                //script.checkout(script.scm)
                 // we e.g. have a .kitchen.docker.yml left from the last run. Remove that.
-                script.sh("git clean -fdx")
+                //script.sh("git clean -fdx")
+                script.echo "git checkout"
             }
         }
     }
