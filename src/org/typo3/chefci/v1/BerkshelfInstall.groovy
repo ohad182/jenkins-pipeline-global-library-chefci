@@ -6,7 +6,8 @@ import groovy.json.JsonSlurper
 import org.apache.commons.lang.RandomStringUtils
 
 def berksInstall(){
-    sh 'berks install'
+    //sh 'berks install'
+    echo "bersk install"
 }
 
 def subscribeToUpstreamJobs() {
@@ -44,14 +45,14 @@ def subscribeToUpstreamJobs() {
     echo "Upstream jobs: ${existingUpstreamCookbookJobs}"
 
     // set job properties to subscribe to upstream jobs
-    properties([
-            pipelineTriggers([
-                    upstream(
-                            threshold: hudson.model.Result.SUCCESS,
-                            upstreamProjects: existingUpstreamCookbookJobs.join(', ')
-                    )
-            ])
-    ])
+   // properties([
+   //         pipelineTriggers([
+   //                 upstream(
+   //                         threshold: hudson.model.Result.SUCCESS,
+   //                         upstreamProjects: existingUpstreamCookbookJobs.join(', ')
+   //                 )
+   //         ])
+   // ])
 }
 
 @NonCPS
