@@ -134,7 +134,7 @@ def execute(){
     stage('resolve dependencies')
     node {
         this.berksInstall()
-        this.subscribeToUpstreamJobs()
+        //this.subscribeToUpstreamJobs()
     }
 }
 
