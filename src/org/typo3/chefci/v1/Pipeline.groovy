@@ -45,6 +45,7 @@ def run(Object step){
 def execute() {
     //(new SlackPreBuild()).execute()
 
+    this.enterParams()
     this.prepare()
 
     this.run(new Lint())
