@@ -3,13 +3,16 @@
 package org.typo3.chefci.v1;
 
 def enterParams(){
-    
+    stage{'Params')
+          {
+              echo "test params"
         parameters {
         stringParam(defaultValue: 'cisco_tesla_bx', description: '', name: 'BOX_NAME')
         stringParam(defaultValue: 'cisco_tesla_bx_v2.3', description: '', name: 'BOX_BRANCH')
-          
-   
-    }
+          }
+              
+              echo "test params End"
+          }
 }
 def prepare() {
     node {
@@ -44,9 +47,9 @@ def run(Object step){
 
 def execute() {
     //(new SlackPreBuild()).execute()
-
+this.prepare()
     this.enterParams()
-    this.prepare()
+    
 
     this.run(new Lint())
 
