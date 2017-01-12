@@ -75,19 +75,21 @@ def Closure getNodeForInstance(String instanceName) {
 }
 
 def prepare(){
-    stage "test-kitchen"
+    stage "test-kitchen"{
 
     node {
-        this.createKitchenYaml()
-        this.setKitchenLocalEnv()
-        stash("cookbook-tk")
+        echo "test"
+        //this.createKitchenYaml()
+        //this.setKitchenLocalEnv()
+        //stash("cookbook-tk")
+     }
     }
 }
 
 def execute(){
     this.prepare()
     // this will allocate multiple nodes
-    this.parallelConverge()
+   // this.parallelConverge()
 }
 
 return this;
