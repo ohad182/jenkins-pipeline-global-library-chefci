@@ -75,7 +75,7 @@ def Closure getNodeForInstance(String instanceName) {
 }
 
 def prepare(){
-    stage "test-kitchen"{
+    stage ('test-kitchen'){
 
     node {
         echo "test"
