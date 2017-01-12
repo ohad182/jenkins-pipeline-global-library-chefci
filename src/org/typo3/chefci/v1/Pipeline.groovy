@@ -3,7 +3,7 @@
 package org.typo3.chefci.v1;
 
 def enterParams(){
-    stage{'Params')
+    stage('Params')
           {
               echo "test params"
         parameters {
