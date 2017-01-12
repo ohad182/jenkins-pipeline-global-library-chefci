@@ -33,7 +33,7 @@ def run(Object step){
 }
 
 def execute() {
-    (new SlackPreBuild()).execute()
+    //(new SlackPreBuild()).execute()
 
     this.prepare()
 
@@ -46,7 +46,7 @@ def execute() {
     if (env.BRANCH_NAME == "master") {
         this.run(new BerkshelfUpload())
     }
-    (new SlackPostBuild()).execute()
+   // (new SlackPostBuild()).execute()
 }
 
 return this;
