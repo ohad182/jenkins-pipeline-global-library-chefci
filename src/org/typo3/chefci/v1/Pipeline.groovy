@@ -6,11 +6,9 @@ def enterParams(){
     stage('Params')
           {
               echo "test params"
-        parameters {
-        stringParam(defaultValue: 'cisco_tesla_bx', description: '', name: 'BOX_NAME')
-        stringParam(defaultValue: 'cisco_tesla_bx_v2.3', description: '', name: 'BOX_BRANCH')
-          }
-              
+              properties([parameters([string(defaultValue: 'cisco_tesla_bx', description: '', name: 'BOX_NAME'),
+                                     string(defaultValue: 'cisco_tesla_bx_v2.3', description: '', name: 'BOX_BRANCH')]), pipelineTriggers([])])
+                      
               echo "test params End"
           }
 }
