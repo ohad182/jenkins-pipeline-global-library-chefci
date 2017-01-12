@@ -4,9 +4,10 @@ package org.typo3.chefci.v1;
 
 def prepare() {
     node {
-        checkout(scm)
+        //checkout(scm)
         // we e.g. have a .kitchen.docker.yml left from the last run. Remove that.
-        sh("git clean -fdx")
+        //sh("git clean -fdx")
+        echo "prepare"
     }
 }
 
