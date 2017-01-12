@@ -3,12 +3,12 @@
 package org.typo3.chefci.v1;
 
 def enterParams(){
-    node {
+    
         parameters {
         stringParam(defaultValue: 'cisco_tesla_bx', description: '', name: 'BOX_NAME')
         stringParam(defaultValue: 'cisco_tesla_bx_v2.3', description: '', name: 'BOX_BRANCH')
           
-    }
+   
     }
 }
 def prepare() {
