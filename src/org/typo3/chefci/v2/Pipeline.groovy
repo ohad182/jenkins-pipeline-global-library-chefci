@@ -14,6 +14,7 @@ class Pipeline implements Serializable {
     def steps
 
     static builder(script, steps) {
+        steps.echo "builder - enter"
         return new Builder(script, steps)
     }
 
@@ -28,6 +29,7 @@ class Pipeline implements Serializable {
         Builder(def script, def steps) {
             this.script = script
             this.steps = steps
+            steps.echo "builder - exit"
         }
 
         def withHelloWorldStage() {
