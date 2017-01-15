@@ -9,7 +9,7 @@ class GitCheckout implements Stage {
 
     @Override
     void execute() {
-        info.script.stage(stageName) {
+        info.script.stage(info.stageName) {
             info.script.node {
                 //script.checkout(script.scm)
                 // we e.g. have a .kitchen.docker.yml left from the last run. Remove that.
