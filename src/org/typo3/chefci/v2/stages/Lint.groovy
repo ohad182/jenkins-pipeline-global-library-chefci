@@ -9,7 +9,7 @@ class Lint implements Stage {
 
     @Override
     void execute() {
-        info.script.stage(stageName) {
+        info.script.stage(info.stageName) {
             foodcritic()
             rubocop()
         }
