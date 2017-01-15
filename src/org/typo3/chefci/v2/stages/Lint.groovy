@@ -1,6 +1,6 @@
 package org.typo3.chefci.v2.stages
 
-class Lint extends AbstractStage {
+class Lint implements Stage {
 
     Lint(Object script, String stageName) {
         super(script, stageName)
