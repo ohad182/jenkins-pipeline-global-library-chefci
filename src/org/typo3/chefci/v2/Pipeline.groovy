@@ -46,10 +46,12 @@ class Pipeline implements Serializable {
         }
 
         def build() {
+            
             return new Pipeline(this)
         }
 
         def buildDefaultPipeline() {
+            steps.echo "building"
             withGitCheckoutStage()
             withLintStage()
             return new Pipeline(this)
