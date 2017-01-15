@@ -1,15 +1,16 @@
 package org.typo3.chefci.v2.stages
 
 public class HelloWorld implements Stage {
-
-    HelloWorld(script, String stageName) {
-        super(script, stageName)
+    StageInfo info;
+    
+    HelloWorld(Object script, String stageName) {
+        info = new StageInfo(script, stageName)
     }
 
     @Override
     void execute() {
-        script.stage(stageName) {
-            script.echo "Hiho!"
+        info.script.stage(stageName) {
+            info.script.echo "Hiho!"
         }
     }
 
