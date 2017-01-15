@@ -9,7 +9,7 @@ public class HelloWorld implements Stage {
 
     @Override
     void execute() {
-        info.script.stage(stageName) {
+        info.script.stage(info.stageName) {
             info.script.echo "Hiho!"
         }
     }
