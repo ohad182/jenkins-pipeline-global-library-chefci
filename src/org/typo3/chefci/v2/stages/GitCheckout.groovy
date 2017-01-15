@@ -1,6 +1,6 @@
 package org.typo3.chefci.v2.stages
 
-class GitCheckout extends AbstractStage {
+class GitCheckout implements StageInfo {
 
     GitCheckout(Object script, String stageName) {
         super(script, stageName)
