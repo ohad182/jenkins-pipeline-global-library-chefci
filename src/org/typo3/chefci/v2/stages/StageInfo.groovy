@@ -1,6 +1,6 @@
 package org.typo3.chefci.v2.stages
 
-class StageInfo extends Serializable {
+class StageInfo implements Serializable {
 
     def stageName
     def script
