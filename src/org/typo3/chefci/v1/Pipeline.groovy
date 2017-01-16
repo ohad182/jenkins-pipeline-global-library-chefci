@@ -2,7 +2,7 @@
 
 package org.typo3.chefci.v1;
 
-def chaim = "test-chaim"
+chaim = "test-chaim"
 
 def enterParams(){
     stage('Params')
