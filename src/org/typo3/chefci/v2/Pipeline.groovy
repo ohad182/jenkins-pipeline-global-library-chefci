@@ -20,7 +20,7 @@ class Pipeline implements Serializable {
  //           envs(FOO: 'bar', TEST: '123')
  //           propertiesFile('env.properties')
         )
-        steps.echo "chaim - ${script.env.chaim}"
+        steps.echo "chaim - ${steps.env.chaim}"
     
         return new Builder(script, steps)
     }
