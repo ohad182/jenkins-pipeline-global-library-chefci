@@ -5,7 +5,7 @@ package org.typo3.chefci.v1;
 def foodcritic(){
     //sh('foodcritic .')
     echo "foodcritic"
-    echo "$chaim"
+    echo "${this.chaim}"
 }
 
 def rubocop(){
