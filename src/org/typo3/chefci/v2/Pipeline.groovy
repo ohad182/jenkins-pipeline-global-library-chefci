@@ -15,11 +15,11 @@ class Pipeline implements Serializable {
 
     static builder(script, steps) {
         steps.echo "builder - enter"
-        script.environment{
+        environment {
             chaim = "Test-Chaim"
         }
         script.echo "echo from script"
-        steps.echo "chaim - $env"
+        steps.echo "chaim - ${env.chaim}"
     
         return new Builder(script, steps)
     }
