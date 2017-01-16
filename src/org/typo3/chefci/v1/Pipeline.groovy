@@ -2,6 +2,8 @@
 
 package org.typo3.chefci.v1;
 
+def chaim = "test-chaim"
+
 def enterParams(){
     stage('Params')
           {
@@ -10,6 +12,8 @@ def enterParams(){
                                      string(defaultValue: 'cisco_tesla_bx_v2.3', description: '', name: 'BOX_BRANCH')]), pipelineTriggers([])])
                       
               echo "test params End"
+              
+              echo "$chaim"
           }
 }
 def prepare() {
