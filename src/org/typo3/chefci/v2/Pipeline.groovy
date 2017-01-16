@@ -15,7 +15,7 @@ class Pipeline implements Serializable {
 
     static builder(script, steps) {
         steps.echo "builder - enter"
-        steps.environmentVariables{
+        steps.envVars{
             env('chaim', 'Test-Chaim')
  //           envs(FOO: 'bar', TEST: '123')
  //           propertiesFile('env.properties')
