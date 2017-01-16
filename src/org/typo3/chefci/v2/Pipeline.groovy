@@ -19,7 +19,7 @@ class Pipeline implements Serializable {
             chaim = "Test-Chaim"
         }
         script.echo "echo from script"
-        steps.echo "chaim - ${script.env.chaim}"
+        steps.echo "chaim - ${script.chaim}"
     
         return new Builder(script, steps)
     }
