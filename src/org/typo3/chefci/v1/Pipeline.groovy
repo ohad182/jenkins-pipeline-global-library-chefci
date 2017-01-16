@@ -13,7 +13,7 @@ def enterParams(){
                       
               echo "test params End"
               
-              echo "$chaim"
+              echo "$this.chaim"
           }
 }
 def prepare() {
