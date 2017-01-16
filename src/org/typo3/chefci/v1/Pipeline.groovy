@@ -44,7 +44,8 @@ def run(Object step){
     } catch (err) {
         // unfortunately, err.message is not whitelisted by script security
         //failTheBuild(err.message)
-        failTheBuild("Build failed")
+        echo err.message
+        //failTheBuild("Build failed")
     }
 }
 
